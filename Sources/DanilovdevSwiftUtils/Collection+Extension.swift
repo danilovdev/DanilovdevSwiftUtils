@@ -12,3 +12,4 @@ public extension Collection {
         !isEmpty
     }
 }
+
