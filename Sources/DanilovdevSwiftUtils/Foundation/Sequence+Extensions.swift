@@ -19,3 +19,9 @@ public extension Sequence where Element: Hashable {
         return filter { set.insert($0).inserted }
     }
 }
+
+public extension Sequence where Element: Numeric {
+    var sum: Element {
+        reduce(0, +)
+    }
+}
