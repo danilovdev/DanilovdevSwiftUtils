@@ -15,4 +15,12 @@ final class IntExtensionsTests: XCTestCase {
         XCTAssertEqual(9876.digits, [9, 8, 7, 6])
         XCTAssertEqual(101010.digits, [1, 0, 1, 0, 1, 0])
     }
+    
+    func testReversed() {
+        XCTAssertEqual(123.reversed, 321)
+        XCTAssertEqual(1234.reversed, 4321)
+        XCTAssertEqual(9876.reversed, 6789)
+        XCTAssertEqual(101010.reversed, 10101)
+    }
+    
 }

@@ -18,4 +18,17 @@ public extension Int {
         }
         return result.reversed()
     }
+    
+    var reversed: Int {
+        var x = self
+        if x == 0 { return 0 }
+        var isNegative = false
+        if x < 0 { isNegative = true }
+        if isNegative { x = -x }
+        var result = 0
+        for i in digits.reversed() {
+            result = result * 10 + i
+        }
+        return isNegative ? -result : result
+    }
 }
