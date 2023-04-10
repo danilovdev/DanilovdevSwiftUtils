@@ -64,4 +64,66 @@ final class IntExtensionsTests: XCTestCase {
         XCTAssertEqual(40.isSqr, false)
         XCTAssertEqual(128.isSqr, false)
     }
+    
+    func testBinaryString() {
+        XCTAssertEqual(0.binaryString, "0")
+        XCTAssertEqual(1.binaryString, "1")
+        XCTAssertEqual(4.binaryString, "100")
+        XCTAssertEqual(7.binaryString, "111")
+        XCTAssertEqual(8.binaryString, "1000")
+        XCTAssertEqual(13.binaryString, "1101")
+        XCTAssertEqual(14.binaryString, "1110")
+    }
+
+    func testBinaryCharArray() {
+        XCTAssertEqual(0.binaryCharArray, ["0"])
+        XCTAssertEqual(1.binaryCharArray, ["1"])
+        XCTAssertEqual(4.binaryCharArray, ["1", "0", "0"])
+        XCTAssertEqual(7.binaryCharArray, ["1", "1","1"])
+        XCTAssertEqual(8.binaryCharArray, ["1", "0", "0", "0"])
+        XCTAssertEqual(13.binaryCharArray, ["1", "1", "0", "1"])
+        XCTAssertEqual(14.binaryCharArray, ["1", "1", "1", "0"])
+    }
+
+    func testBinaryArray() {
+        XCTAssertEqual(0.binaryArray, [0])
+        XCTAssertEqual(1.binaryArray, [1])
+        XCTAssertEqual(4.binaryArray, [1, 0, 0])
+        XCTAssertEqual(7.binaryArray, [1, 1, 1])
+        XCTAssertEqual(8.binaryArray, [1, 0, 0, 0])
+        XCTAssertEqual(13.binaryArray, [1, 1, 0, 1])
+        XCTAssertEqual(14.binaryArray, [1, 1, 1, 0])
+    }
+    
+    func testIsPalindrome() {
+        XCTAssertEqual(5.isPalindrome, true)
+        XCTAssertEqual(435534.isPalindrome, true)
+        XCTAssertEqual(121.isPalindrome, true)
+        XCTAssertEqual(444.isPalindrome, true)
+        XCTAssertEqual(85.isPalindrome, false)
+        XCTAssertEqual(40.isPalindrome, false)
+        XCTAssertEqual(128.isPalindrome, false)
+    }
+    
+    func testNumberOf1Bits() {
+        XCTAssertEqual(0.numberOf1Bits, 0)
+        XCTAssertEqual(1.numberOf1Bits, 1)
+        XCTAssertEqual(4.numberOf1Bits, 1)
+        XCTAssertEqual(7.numberOf1Bits, 3)
+        XCTAssertEqual(8.numberOf1Bits, 1)
+        XCTAssertEqual(13.numberOf1Bits, 3)
+        XCTAssertEqual(14.numberOf1Bits, 3)
+    }
+    
+    func testAllDivisors() {
+        XCTAssertEqual(1.allDivisors, [1])
+        XCTAssertEqual(4.allDivisors, [1, 2, 4])
+        XCTAssertEqual(7.allDivisors, [1, 7])
+        XCTAssertEqual(13.allDivisors, [1, 13])
+        XCTAssertEqual(14.allDivisors, [1, 2, 7, 14])
+        XCTAssertEqual(144.allDivisors, [1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 36, 48, 72, 144])
+        XCTAssertEqual(625.allDivisors, [1, 5, 25, 125, 625])
+        XCTAssertEqual(67843.allDivisors, [1, 67843])
+        XCTAssertEqual(67844.allDivisors, [1, 2, 4, 7, 14, 28, 2423, 4846, 9692, 16961, 33922, 67844])
+    }
 }

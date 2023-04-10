@@ -30,6 +30,11 @@ public extension String {
         return true
     }
     
+    var canBeConvertedToPalindrome: Bool {
+        let counter = counter()
+        return counter.filter { $0.value % 2 == 1 }.count <= 1
+    }
+    
     var toCharArray: [Character] {
         Array(self)
     }

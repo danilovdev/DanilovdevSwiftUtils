@@ -40,4 +40,17 @@ final class StringExtensionsTests: XCTestCase {
         XCTAssertEqual("veritas".isPalindrome, false)
         XCTAssertEqual("majority".isPalindrome, false)
     }
+    
+    func testCanBeConvertedToPalindrome() {
+        XCTAssertEqual("a".canBeConvertedToPalindrome, true)
+        XCTAssertEqual("aab".canBeConvertedToPalindrome, true)
+        XCTAssertEqual("aaaaabb".canBeConvertedToPalindrome, true)
+        XCTAssertEqual("aaaabb".canBeConvertedToPalindrome, true)
+        XCTAssertEqual("aaaabbccjjjj".canBeConvertedToPalindrome, true)
+        XCTAssertEqual("aaaabc".canBeConvertedToPalindrome, false)
+        XCTAssertEqual("qazwsx".canBeConvertedToPalindrome, false)
+        XCTAssertEqual("qwerty".canBeConvertedToPalindrome, false)
+        XCTAssertEqual("veritas".canBeConvertedToPalindrome, false)
+        XCTAssertEqual("majority".canBeConvertedToPalindrome, false)
+    }
 }
