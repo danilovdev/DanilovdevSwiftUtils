@@ -8,6 +8,33 @@
 import Foundation
 
 public extension Int {
+    var isEven: Bool {
+        self % 2 == 0
+    }
+    
+    var isOdd: Bool {
+        self % 2 != 0
+    }
+    
+    var isPowerOf2: Bool {
+        var n = self
+        while n > 1 {
+            let rest = n % 2
+            if rest != 0 { return false }
+            n /= 2
+        }
+        return true
+    }
+    
+    var isSqr: Bool {
+        var i = 1
+        while i * i <= self {
+            if (i * i == self) { return true }
+            i += 1
+        }
+        return false
+    }
+    
     var digits: [Int] {
         var num = self
         var result: [Int] = []
@@ -30,5 +57,15 @@ public extension Int {
             result = result * 10 + i
         }
         return isNegative ? -result : result
+    }
+    
+    func isPowerOf(_ value: Int) -> Bool {
+        var n = self
+        while n > 1 {
+            let rest = n % value
+            if rest != 0 { return false }
+            n /= value
+        }
+        return true
     }
 }
