@@ -53,4 +53,23 @@ final class StringExtensionsTests: XCTestCase {
         XCTAssertEqual("veritas".canBeConvertedToPalindrome, false)
         XCTAssertEqual("majority".canBeConvertedToPalindrome, false)
     }
+    
+    func testIntValue() {
+        XCTAssertEqual("123".intValue, 123)
+        XCTAssertEqual("-145".intValue, -145)
+        XCTAssertEqual("".intValue, nil)
+        XCTAssertEqual("aAaa".intValue, nil)
+    }
+    
+    func testClosedRangeSubscript() {
+        XCTAssertEqual("abcdefgh"[0...3], "abcd")
+    }
+    
+    func testOneIndexSubscript() {
+        XCTAssertEqual("abcdefgh"[6], "g")
+    }
+    
+    func testNonInclusiveRangeSubscript() {
+        XCTAssertEqual("abcdefgh"[1..<2], "b")
+    }
 }

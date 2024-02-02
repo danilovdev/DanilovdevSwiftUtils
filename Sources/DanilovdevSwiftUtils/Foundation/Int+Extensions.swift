@@ -84,6 +84,10 @@ public extension Int {
         return result.reversed()
     }
     
+    var length: Int {
+        String(self).count
+    }
+    
     var reversed: Int {
         var x = self
         if x == 0 { return 0 }

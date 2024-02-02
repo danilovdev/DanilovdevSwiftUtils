@@ -39,3 +39,9 @@ public extension Array where Element: Comparable {
         self == sorted(by: { $0 >= $1 }) || self == sorted(by: { $0 <= $1 })
     }
 }
+
+public extension Array where Element == Character {
+    var stringValue: String {
+        String(self)
+    }
+}

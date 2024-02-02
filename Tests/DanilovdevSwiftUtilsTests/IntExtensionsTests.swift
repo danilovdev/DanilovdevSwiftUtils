@@ -126,4 +126,16 @@ final class IntExtensionsTests: XCTestCase {
         XCTAssertEqual(67843.allDivisors, [1, 67843])
         XCTAssertEqual(67844.allDivisors, [1, 2, 4, 7, 14, 28, 2423, 4846, 9692, 16961, 33922, 67844])
     }
+    
+    func testLength() {
+        XCTAssertEqual(1.length, 1)
+        XCTAssertEqual(12.length, 2)
+        XCTAssertEqual(123.length, 3)
+        XCTAssertEqual(9876544.length, 7)
+        
+        XCTAssertEqual((-1).length, 2)
+        XCTAssertEqual((-12).length, 3)
+        XCTAssertEqual((-123).length, 4)
+        XCTAssertEqual((-9876544).length, 8)
+    }
 }

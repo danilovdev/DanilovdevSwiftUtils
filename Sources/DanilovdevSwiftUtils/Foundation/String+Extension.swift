@@ -39,11 +39,33 @@ public extension String {
         Array(self)
     }
     
+    var intValue: Int? {
+        Int(self)
+    }
+    
     func getValueAt(idx: Int) -> String {
         String(self[idx])
     }
     
-    subscript(i: Int) -> Character {
-        self[index(startIndex, offsetBy: i)]
+    subscript(_ range: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(startIndex, offsetBy: range.upperBound)
+        return String(self[start..<end])
+    }
+    
+    subscript(_ range: CountableClosedRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(startIndex, offsetBy: range.upperBound)
+        return String(self[start...end])
+    }
+    
+    subscript(_ i: Int) -> String {
+        let start = index(startIndex, offsetBy: i)
+        let end = index(start, offsetBy: 1)
+        return String(self[start..<end])
+    }
+    
+    subscript(charPosition: Int) -> Character {
+        self[index(startIndex, offsetBy: charPosition)]
     }
 }
