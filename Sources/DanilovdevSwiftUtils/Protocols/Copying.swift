@@ -13,7 +13,7 @@ public protocol Copying {
 
 public extension Copying {
     func copy() -> Self {
-        Self.init(original: self)
+        Self(original: self)
     }
 }
 

@@ -7,13 +7,14 @@
 
 import Foundation
 
-public protocol Configurable {}
+public protocol Configurable: AnyObject {}
 
 public extension Configurable {
+    @discardableResult
     func with(config: (inout Self) -> Void) -> Self {
         var this = self
         config(&this)
-        return this
+        return self
     }
 }
 
