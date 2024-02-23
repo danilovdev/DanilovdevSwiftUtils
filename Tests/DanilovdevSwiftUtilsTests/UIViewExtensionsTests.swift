@@ -91,3 +91,8 @@ final class UIViewExtensionsTests: XCTestCase {
         XCTAssertEqual(view.getAllEmbeddedSubviews(ofType: UILabel.self).count, 3)
     }
 }
+
+
+private class MyCustomCell: UITableViewCell {
+    
+}

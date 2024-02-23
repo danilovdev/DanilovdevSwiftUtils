@@ -44,14 +44,14 @@ final class CopyingTests: XCTestCase {
     }
     
     func testCopyArray() {
-        var array = [
+        let array = [
             CarValueType(name: "BMW", color: "White"),
             CarValueType(name: "Audi", color: "Black"),
             CarValueType(name: "Toyota", color: "Red")
         ]
         
-        var copyArray = array
-        var cloneArray = array.clone()
+        let copyArray = array
+        let cloneArray = array.clone()
         
         XCTAssertNotEqual(unsafeBitCast(array, to: Int.self), unsafeBitCast(cloneArray, to: Int.self))
         XCTAssertEqual(unsafeBitCast(array, to: Int.self), unsafeBitCast(copyArray, to: Int.self))
