@@ -72,4 +72,11 @@ final class StringExtensionsTests: XCTestCase {
     func testNonInclusiveRangeSubscript() {
         XCTAssertEqual("abcdefgh"[1..<2], "b")
     }
+    
+    //
+    func testRemoveDuplicates() {
+        XCTAssertEqual("wombat".removeDuplicates(), "wombat")
+        XCTAssertEqual("hello".removeDuplicates(), "helo")
+        XCTAssertEqual("Mississippi".removeDuplicates(), "Misp")
+    }
 }
