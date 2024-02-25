@@ -1,6 +1,6 @@
 //
 //  UIView+Constraints.swift
-//  
+//
 //
 //  Created by Aleksei Danilov on 23.01.2023.
 //
@@ -16,10 +16,12 @@ public extension UIView {
         bottom: CGFloat = 0
     ) {
         translatesAutoresizingMaskIntoConstraints = false
-        leadingAnchor.constraint(equalTo: toView.leadingAnchor, constant: leading).isActive = true
-        topAnchor.constraint(equalTo: toView.topAnchor, constant: top).isActive = true
-        trailingAnchor.constraint(equalTo: toView.trailingAnchor, constant: -trailing).isActive = true
-        bottomAnchor.constraint(equalTo: toView.bottomAnchor, constant: -bottom).isActive = true
+        [
+            leadingAnchor.constraint(equalTo: toView.leadingAnchor, constant: leading),
+            topAnchor.constraint(equalTo: toView.topAnchor, constant: top),
+            trailingAnchor.constraint(equalTo: toView.trailingAnchor, constant: -trailing),
+            bottomAnchor.constraint(equalTo: toView.bottomAnchor, constant: -bottom)
+        ].activate()
     }
     
     func addConstraints(
@@ -27,27 +29,31 @@ public extension UIView {
         insets: UIEdgeInsets
     ) {
         translatesAutoresizingMaskIntoConstraints = false
-        leadingAnchor.constraint(equalTo: toView.leadingAnchor, constant: insets.left).isActive = true
-        topAnchor.constraint(equalTo: toView.topAnchor, constant: insets.top).isActive = true
-        trailingAnchor.constraint(equalTo: toView.trailingAnchor, constant: -insets.right).isActive = true
-        bottomAnchor.constraint(equalTo: toView.bottomAnchor, constant: -insets.bottom).isActive = true
+        [
+            leadingAnchor.constraint(equalTo: toView.leadingAnchor, constant: insets.left),
+            topAnchor.constraint(equalTo: toView.topAnchor, constant: insets.top),
+            trailingAnchor.constraint(equalTo: toView.trailingAnchor, constant: -insets.right),
+            bottomAnchor.constraint(equalTo: toView.bottomAnchor, constant: -insets.bottom)
+        ].activate()
     }
     
     func makeCenterEqualsToSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
         guard let superview = superview else { return }
-        centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
-        centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+        [
+            centerYAnchor.constraint(equalTo: superview.centerYAnchor),
+            centerXAnchor.constraint(equalTo: superview.centerXAnchor)
+        ].activate()
     }
     
     func setHeight(_ value: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: value).isActive = true
+        heightAnchor.constraint(equalToConstant: value).activate()
     }
     
     func setWidth(_ value: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: value).isActive = true
+        widthAnchor.constraint(equalToConstant: value).activate()
     }
 }
 
