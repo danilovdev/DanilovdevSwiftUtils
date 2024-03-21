@@ -74,9 +74,20 @@ final class CollectionCustomHighOrderTestss: XCTestCase {
         let array = [1, 2, 3, 4, 5, 6, 7]
         
         // when
-        let result = array.flatMap { [$0, $0] }
+        let result = array.customFlatMap { [$0, $0] }
         
         // then
         XCTAssertEqual(result, [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7])
+    }
+    
+    func testCustomFlatMap_whenArrayOfArrays() {
+        // given
+        let array = [[1, 2, 3, 4], [5, 6, 7]]
+        
+        // when
+        let result = array.customFlatMap { $0 }
+        
+        // then
+        XCTAssertEqual(result, [1, 2, 3, 4, 5, 6, 7])
     }
 }
